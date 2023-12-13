@@ -1,0 +1,3 @@
+[submodule "LLL"]
+	path = LLL
+	url = https://github.com/HalmonCelman/LLL.git
