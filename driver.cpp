@@ -12,6 +12,10 @@ std::ifstream program;
 
 uint8_t lll_init_program(char* path,uint32_t numberOfProgram){
     program.open(path,std::ios::in);
+    if(!program.is_open() ){
+        std::cout<<"ERROR: No such file or directory: "<<path<<std::endl;
+        exit(0);
+    }
     return 0;
 }
 
@@ -23,6 +27,10 @@ uint8_t lll_end_program(void){
 unsigned char lll_get(void){
     char c;
     program.read(&c,1);
+    if(!program){
+        c = LLL_EXIT;
+    }
+    std::cout<<"INFO: "<<(int)c<<std::endl;
     return c;
 }
 
