@@ -30,7 +30,6 @@ unsigned char lll_get(void){
     if(!program){
         c = LLL_EXIT;
     }
-    std::cout<<"INFO: "<<(int)c<<std::endl;
     return c;
 }
 
