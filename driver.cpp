@@ -30,6 +30,7 @@ unsigned char lll_get(void){
     if(!program){
         c = LLL_EXIT;
     }
+    actualPosition++;
     return c;
 }
 
@@ -46,6 +47,7 @@ void lll_throw_error(uint8_t error,char * message,uint8_t errnum){
 
 void lll_goTo(uint64_t position){
     actualPosition = position;
+    program.seekg(actualPosition);
 }
 
 uint64_t lll_getPosition(void){
