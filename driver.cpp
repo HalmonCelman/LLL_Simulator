@@ -54,6 +54,24 @@ uint64_t lll_getPosition(void){
     return actualPosition;
 }
 
+void pushStack(uint8_t data){
+    if(stack_pointer.value >= LLL_STACK_SIZE){
+        std::cout<<"ERROR: STACK OVERFLOW - Exiting\n";
+        exit(0);
+    }
+    LLL_STACK[stack_pointer.value++]=data;
+}
+
+uint8_t popStack(void){
+    if(stack_pointer.value){
+        return LLL_STACK[--stack_pointer.value];
+    }else{
+        std::cout<<"ERROR: NO ELEMENTS ON STACK TO POP - Exiting\n";
+        exit(0);
+    }
+}
+
+
 lll_err lll_stream_out(uint32_t reg, uint8_t stream){
     lll_err tmpErr;
     tmpErr.status=LLL_OK;
