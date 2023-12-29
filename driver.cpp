@@ -72,16 +72,20 @@ uint8_t lll_popStack(void){
 }
 
 
-lll_err lll_stream_out(uint32_t reg, uint8_t stream){
+lll_err lll_stream_out(uint8_t data, uint8_t stream){
     lll_err tmpErr;
     tmpErr.status=LLL_OK;
+
+    std::cout<<"out data:"<<(int)data<<"\n";
 
     return tmpErr;
 }
 
-lll_err lll_stream_in(uint32_t reg, uint8_t stream){
+lll_err lll_stream_in(uint8_t *data, uint8_t stream){
     lll_err tmpErr;
     tmpErr.status=LLL_OK;
+
+    *data = stream;
 
     return tmpErr;
 }
