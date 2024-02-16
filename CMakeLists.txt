@@ -31,7 +31,7 @@ add_subdirectory(LLL)
 add_executable(${PROJECT_NAME} ${lllc_SOURCE_FILES} main.cpp driver.cpp)
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${llls_INCLUDE_DIRECTORIES})
-target_link_libraries(${PROJECT_NAME} lll)
+target_link_libraries(${PROJECT_NAME} LLL)
 
 install(TARGETS ${PROJECT_NAME} DESTINATION bin)
 
